@@ -1,9 +1,15 @@
 
 import express from 'express';
-import { authenticateToken } from '../middleware/authenticateToken.js';
+
 import { getQuizQuestions } from '../controllers/quiz.controller.js';
+import { verifyToken } from '../utils/verifyUser.js';
 
 const router = express.Router();
 
-router.get('/quiz', authenticateToken, getQuizQuestions);
+
+
+router.get('/quiz',verifyToken,getQuizQuestions);
+
+
+
 export default router

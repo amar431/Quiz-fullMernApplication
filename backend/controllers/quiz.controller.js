@@ -5,6 +5,7 @@ export const getQuizQuestions = async (req, res) => {
     if (!req.user) {
         return res.status(401).json({ authenticated: false });
       }
+      
 
 
   try {

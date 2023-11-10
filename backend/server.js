@@ -4,6 +4,7 @@ import cookieParser from 'cookie-parser';
 import dotenv from 'dotenv'
 import authRouter from './routes/auth.route.js'
 import quizRoute from './routes/auth.quiz.js'
+import resultRouter from './routes/auth.result.js'
 import cors from 'cors'
 const port = process.env.PORT || 3000;
 dotenv.config()
@@ -31,6 +32,8 @@ app.use(express.json());
 app.use('/api/auth', authRouter);
 
 app.use('/api/auth',quizRoute)
+
+app.use('/api', resultRouter);
 
 
 app.use((err,req,res,next)=>{

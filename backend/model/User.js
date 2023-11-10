@@ -16,6 +16,14 @@ const UserSchema = new Schema({
     type: String,
     required: true,
   },
+  testResults: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'TestResult',
+  }],
+  points: {
+    type: Number,
+    default: 0,
+  },
 },{timestamps:true});
 
 const User = mongoose.model('users', UserSchema);
